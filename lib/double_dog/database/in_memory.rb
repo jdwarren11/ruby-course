@@ -13,7 +13,18 @@ module DoubleDog
         @order_id_counter = 600
       end
 
-      def create_user(attrs)
+      def clear_everything
+        @users = {}
+        @users_id_counter = 100
+        @sessions = {}
+        @sessions_id_counter = 100
+        @items = {}
+        @item_id_counter = 500
+        @orders = {}
+        @order_id_counter = 600
+      end
+
+      def create_user(attrs) # takes a hash of data and returns new user with id
         new_id = (@item_id_counter += 1)
         @users[new_id] = attrs
         attrs[:id] = new_id
